@@ -24,8 +24,8 @@ const Paragraph=styled.p`
 font-family:'Inter';
 padding:10px 10px;
 color:#42D9C8;
+width:90%;
 line-height:140%;
-text-align:center;
 `
 const MapContainer=styled.div`
 width:50%;
@@ -124,6 +124,7 @@ export default class Contact extends Component {
             <Splitter>
             <Form onSubmit={this.submitForm.bind(this)} target="_blank" action="https://formspree.io/f/mpzojjwg" method="POST">
                 <Header>Contact me</Header>
+                <Paragraph>Hey again,i'm currently searching for a job with visa sponsorship :).If you have an offer or a question don't hesitate to contact me. via the form below or at omarhanaficontact@gmail.com</Paragraph>
                 <RowedInputs>
                 <Input name="name" onChange={this.HandleChange} value={name} placeholder="Name" half={true}/>&nbsp;
 

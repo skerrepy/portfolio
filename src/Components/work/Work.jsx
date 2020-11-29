@@ -28,7 +28,7 @@ export default class Work extends Component {
                 <Header>Projects that i have done in these couple of years.</Header>
                 <Caption>(With every mistake,success in these projects i learned a new tech and i'm proud of this.)</Caption>
                       <Cards>
-                <Card title="Rhousey" description={rhousey} tech={["jquery","html5","semantic ui","mongodb","cloudnary"]}/>
+                <Card title="Rhousey" description={rhousey} tech={["jquery","html5","semantic ui","mongodb","cloudinary"]}/>
                 <Card title="Vaymees" description={vaymees} tech={["reactJs","ant design","mongodb","redux","expressJs","cloudinary"]}/>
                 <Card title="Tunytalk" description={tunytalk} tech={["reactJs","socket io","styled-components","mongodb","redux","flask","s3","aws","docker","nginx","intl"]}/>
 
