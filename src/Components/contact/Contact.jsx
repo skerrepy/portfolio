@@ -71,6 +71,18 @@ const Modal=styled.div`
   height:150px;
   width:200px;
 `
+const StatusCard=styled.div`
+    width:90%;
+    padding:10px 10px;
+    background:${props=>props.bg};
+    font-size:20px;
+    text-align:center;
+    color:white;
+    margin-top:10px;
+    border-radius:3px;
+
+
+`
 export default class Contact extends Component {
     constructor(){
         super();
@@ -78,7 +90,8 @@ export default class Contact extends Component {
             name:'',
             email:'',
             subject:'',
-            message:''
+            message:'',
+            status:""
         }
         this.HandleChange=this.HandleChange.bind(this)
     }
@@ -87,11 +100,29 @@ export default class Contact extends Component {
           [e.target.name]:e.target.value
       })
   }
+  submitForm(ev) {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        this.setState({ status: "SUCCESS" });
+      } else {
+        this.setState({ status: "ERROR" });
+      }
+    };
+    xhr.send(data);
+  }
     render() {
-        let {name,email,message,subject}=this.state
+        let {name,email,message,subject,status}=this.state
         return (
             <Splitter>
-            <Form target="_blank" action="https://formsubmit.co/your@email.com" method="POST">
+            <Form onSubmit={this.submitForm.bind(this)} target="_blank" action="https://formspree.io/f/mpzojjwg" method="POST">
                 <Header>Contact me</Header>
                 <RowedInputs>
                 <Input name="name" onChange={this.HandleChange} value={name} placeholder="Name" half={true}/>&nbsp;
@@ -101,7 +132,14 @@ export default class Contact extends Component {
                 <Input name="subject" onChange={this.HandleChange} value={subject} placeholder="subject" half={false}/>
 
 <TextArea name="message" onChange={this.HandleChange} value={message} placeholder="Message" />
-<Submit>Send</Submit>
+
+
+{status === "SUCCESS" ? <StatusCard bg="#01C24E">
+Thanks for sending your infos i'll be sure to reach you as soon as possible.
+</StatusCard> : <Submit>Send</Submit>}
+    {status === "ERROR" &&<StatusCard bg="#D73D42">
+Error while sending your infos :( i'm really sorry but can you contact me <b>omarhanaficontact@gmail.com</b>.
+</StatusCard>}
             </Form>
             <MapContainer>
                 <MapComponent/>
