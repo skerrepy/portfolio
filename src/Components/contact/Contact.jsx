@@ -5,7 +5,10 @@ import MapComponent from './components/MapComponent'
 const Splitter=styled.div`
     display:flex;
     flex-direction:row;
+    @media only screen and (max-width: 767px) {
 
+        flex-direction:column;
+        }
 
 `
 const Form=styled.form`
@@ -13,6 +16,12 @@ display:flex;
 flex-direction:column;
 width:50%;
 align-items:center;
+@media only screen and (max-width: 767px) {
+    width:100%;
+    background:#1e1c24;
+    margin-bottom:10px;
+    margin-top:10px;
+    }
 `
 const Header=styled.h1`
 font-family:'Inter';
@@ -29,12 +38,22 @@ line-height:140%;
 `
 const MapContainer=styled.div`
 width:50%;
+@media only screen and (max-width: 767px) {
+    width:100%;
+  
+    }
 `
 const RowedInputs=styled.div`
     display:flex;
     width:100%;
     align-items:center;
     justify-content:center;
+    @media only screen and (max-width: 767px) {
+        margin-bottom:5px;
+        margin-top:5px;
+      
+        }
+    
 `
 const TextArea=styled.textarea`
 padding:10px 10px;
@@ -53,6 +72,10 @@ color:gray;
 &::placeholder{
     color:gray;
 }
+@media only screen and (max-width: 767px) {
+    margin-top:10px;
+  
+    }
 `
 const Submit=styled.button`
 background:#42d9c8;
@@ -65,6 +88,9 @@ border-radius:3px;
 &:hover{
     cursor:pointer;
 }
+@media only screen and (max-width: 767px) {
+    margin-bottom:10px;
+    }
 `
 const Modal=styled.div`
   position:fixed;
@@ -144,9 +170,7 @@ Error while sending your infos :( i'm really sorry but can you contact me <b>oma
             </Form>
             <MapContainer>
                 <MapComponent/>
-                <Modal>
-                    chabeb
-                  </Modal>
+      
             </MapContainer>
             </Splitter>
 

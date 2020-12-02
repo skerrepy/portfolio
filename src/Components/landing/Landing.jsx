@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled,{keyframes} from "styled-components";
 import AnimatedLetter from "../reusable/letters/AnimatedLetter";
 import AvatarImage from "../reusable/assets/avatar.jpg";
+import Word from '../reusable/words/Word'
 const Container = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
   width: 50%;
+  @media only screen and (max-width: 767px) {
+  width:100%;
+  height:100vh;
+  background:#1e1c24;
+  }
 `;
 const AvatarContainer = styled.div`
   color: white;
@@ -16,10 +22,15 @@ const AvatarContainer = styled.div`
   align-items: center;
   //justify-content: center;
   width: 50%;
+  @media only screen and (max-width: 767px) {
+    display:none;
+  }
 `;
 const Splitter = styled.div`
   display: flex;
   flex-direction: row;
+  @media only screen and (max-width: 767px) {
+  }
 `;
 const ParaHeader = styled.h1`
   font-family: "Inter";
@@ -92,39 +103,57 @@ for letter in text:
   }
 }
 
+const TypeWritingSpan=styled.span`
+
+`
+
 let Welcome = () => {
   return (
-    <span>
+    <TypeWritingSpan>
+    <Word delay="0">
       <AnimatedLetter>H</AnimatedLetter>
       <AnimatedLetter>i</AnimatedLetter>
       <AnimatedLetter>,</AnimatedLetter>
+      </Word>
       <br />
+      <Word delay="0.4">
+
       <AnimatedLetter>I</AnimatedLetter>
       <AnimatedLetter>'</AnimatedLetter>
       <AnimatedLetter>m</AnimatedLetter>
+      </Word>
       &nbsp;
+      <Word delay="0.6">
       <AnimatedLetter>o</AnimatedLetter>
       <AnimatedLetter>m</AnimatedLetter>
       <AnimatedLetter>a</AnimatedLetter>
       <AnimatedLetter>r</AnimatedLetter>
       <AnimatedLetter>,</AnimatedLetter>
+      </Word>
       <br />
+      <Word delay="0.8">
       <AnimatedLetter>F</AnimatedLetter>
       <AnimatedLetter>u</AnimatedLetter>
       <AnimatedLetter>l</AnimatedLetter>
       <AnimatedLetter>l</AnimatedLetter>
+      </Word>
       &nbsp;
+      <Word delay="1">
       <AnimatedLetter>s</AnimatedLetter>
       <AnimatedLetter>t</AnimatedLetter>
       <AnimatedLetter>a</AnimatedLetter>
       <AnimatedLetter>c</AnimatedLetter>
       <AnimatedLetter>k</AnimatedLetter>
+      </Word>
       &nbsp;
+      <Word delay="1.4">
       <AnimatedLetter>w</AnimatedLetter>
       <AnimatedLetter>e</AnimatedLetter>
       <AnimatedLetter>b</AnimatedLetter>
+      </Word>
       &nbsp;
       <br/>
+      <Word delay="1.6">
       <AnimatedLetter>d</AnimatedLetter>
       <AnimatedLetter>e</AnimatedLetter>
       <AnimatedLetter>v</AnimatedLetter>
@@ -135,6 +164,7 @@ let Welcome = () => {
       <AnimatedLetter>e</AnimatedLetter>
       <AnimatedLetter>r</AnimatedLetter>
       <AnimatedLetter>.</AnimatedLetter>
-    </span>
+      </Word>
+    </TypeWritingSpan>
   );
 };

@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import styled,{keyframes} from 'styled-components'
-
-const rubberAnim=keyframes`
+const ShowAndShake=keyframes`
 from {
     transform: scale3d(1, 1, 1);
   }
 
   30% {
     transform: scale3d(1.25, 0.75, 1);
+    
   }
 
   40% {
@@ -28,23 +28,27 @@ from {
 
   to {
     transform: scale3d(1, 1, 1);
+    opacity:1;
+
   }
 `
+
 const Container=styled.span`
 animation-duration: 1s;
-animation-fill-mode: ease-in;
-animation-iteration-count: 2;
+animation-fill-mode: forwards;
+animation-iteration-count: 1;
 display: inline-block;
+animation-delay:${props=>props.delay}s;
+animation-name:${ShowAndShake};
+    opacity:0;
 
-&:hover{
-    animation-name:${rubberAnim};
 
-}
+    
 `
-export default class AnimatedLetter extends Component {
+export default class Word extends Component {
     render() {
         return (
-            <Container>
+            <Container delay={this.props.delay}>
                 {this.props.children}
             </Container>
         )

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import './assets/cat.css'
 
@@ -8,7 +7,7 @@ const Container=styled.div`
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    height:100%;
+    height:100vh;
     width:100%;
     background:#42d9c8;
 
@@ -18,7 +17,7 @@ const Paragraph=styled.h1`
     font-family:'Inter',sans-serif;
     text-align:center;
 `
-const Credits=styled(Link)`
+const Credits=styled.a`
 color:white;
 font-family:'Inter',sans-serif;
 text-align:center;
@@ -42,7 +41,7 @@ export default class Cat extends Component {
 	</div>
 </div>
 <Paragraph>Loading.... </Paragraph>
-<Credits to="https://codepen.io/johanmouchet/pen/OXxvqr">Credits(codepen)</Credits>
+<Credits href="https://codepen.io/johanmouchet/pen/OXxvqr">Credits(codepen)</Credits>
 </Container>
         )
     }

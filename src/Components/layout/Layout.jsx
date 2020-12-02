@@ -7,12 +7,12 @@ const Grid = styled.div`
   background:#1E1C24;
 
   overflow-x:hidden;
-  @media only screen and (max-width : 480px) {
+  @media only screen and (max-width : 767px) {
     display: flex;
     flex-direction:column;
     height:100%;
     
-    background:black;
+    background:#1e1c24;
   }
 `;
 export default class Layout extends Component {

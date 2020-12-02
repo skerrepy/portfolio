@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Card from './components/project-cards/Card'
+import TunytalkAvatar from '../reusable/assets/tunytalk.jpg'
+import RhouseyAvatar from '../reusable/assets/rhousey.png'
+import VaymeesAvatar from '../reusable/assets/vaymees.jpg'
+
 const Cards=styled.div`
     display:flex;
     flex-direction:flex;
     padding:10px 10px;
+    @media only screen and (max-width: 767px) {
+        flex-direction:column;
+        }
 `
 const Header=styled.h1`
 font-family:'Inter';
@@ -28,9 +35,9 @@ export default class Work extends Component {
                 <Header>Projects that i have done in these couple of years.</Header>
                 <Caption>(With every mistake,success in these projects i learned a new tech and i'm proud of this.)</Caption>
                       <Cards>
-                <Card title="Rhousey" description={rhousey} tech={["jquery","html5","semantic ui","mongodb","cloudinary"]}/>
-                <Card title="Vaymees" description={vaymees} tech={["reactJs","ant design","mongodb","redux","expressJs","cloudinary"]}/>
-                <Card title="Tunytalk" description={tunytalk} tech={["reactJs","socket io","styled-components","mongodb","redux","flask","s3","aws","docker","nginx","intl"]}/>
+                <Card title="Rhousey" image={RhouseyAvatar} description={rhousey} tech={["jquery","html5","semantic ui","mongodb","cloudinary","expressJs","nodeJs"]}/>
+                <Card title="Vaymees"  description={vaymees} image={VaymeesAvatar} tech={["reactJs","ant design","mongodb","redux","expressJs","cloudinary"]}/>
+                <Card title="Tunytalk"image={TunytalkAvatar} description={tunytalk} tech={["reactJs","socket io","mongodb","redux","flask","s3","aws","docker","nginx","intl","styled-components"]}/>
 
             </Cards>
             </div>
