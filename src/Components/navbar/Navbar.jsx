@@ -152,7 +152,7 @@ export default class Navbar extends Component {
           this.setState({
             show:false
           })
-        }} href="https://twitter.com/mikatorigai">
+        }}  href="https://twitter.com/mikatorigai">
             <FiTwitter />
           </SocialItem>
           <SocialItem onClick={e=>{

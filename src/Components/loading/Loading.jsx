@@ -27,17 +27,17 @@ export default class Cat extends Component {
     render() {
         return (
 <Container>
-<div class="cat">
-	<div class="ear ear--left"></div>
-	<div class="ear ear--right"></div>
-	<div class="face">
-		<div class="eye eye--left">
-			<div class="eye-pupil"></div>
+<div className="cat">
+	<div className="ear ear--left"></div>
+	<div className="ear ear--right"></div>
+	<div className="face">
+		<div className="eye eye--left">
+			<div className="eye-pupil"></div>
 		</div>
-		<div class="eye eye--right">
-			<div class="eye-pupil"></div>
+		<div className="eye eye--right">
+			<div className="eye-pupil"></div>
 		</div>
-		<div class="muzzle"></div>
+		<div className="muzzle"></div>
 	</div>
 </div>
 <Paragraph>Loading.... </Paragraph>

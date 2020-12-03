@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Word from "../../../../reusable/words/Word";
+import AvatarImage from "../../../../reusable/assets/avatar.jpg";
+
 const Splitter = styled.div`
   display: flex;
   flex-direction: row;
@@ -9,6 +11,7 @@ const ImageContainer = styled.div`
   width: 50%;
   display:flex;
   height:100%;
+  justify-content:center;
   @media only screen and (max-width: 767px) {
     display:none;
   
@@ -23,14 +26,11 @@ const AboutContainer = styled.div`
     }
 `;
 
-const Image=styled.div`
-background-image:url(${props=>props.src});
-height:500px;
+const Image=styled.img`
+height:400px;
 width:70%;
-background-size:cover;
-background-position:center;
-border-radius:5px;
-background-repeat:no-repeat;
+object-fit:cover;
+border-radius:50%;
 margin:10px 10px;
 `
 const Header = styled.h1`
@@ -64,7 +64,7 @@ export default class AboutMe extends Component {
           </Word>
         </AboutContainer>
         <ImageContainer>
-            <Image src="https://picsum.photos/200/300"/>
+            <Image src={AvatarImage}/>
         </ImageContainer>
       </Splitter>
     );

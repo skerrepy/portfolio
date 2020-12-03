@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import styled,{keyframes} from "styled-components";
+import styled from "styled-components";
 import AnimatedLetter from "../reusable/letters/AnimatedLetter";
 import AvatarImage from "../reusable/assets/avatar.jpg";
 import Word from '../reusable/words/Word'
