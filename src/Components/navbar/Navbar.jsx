@@ -114,29 +114,29 @@ export default class Navbar extends Component {
             show:false
           })
           console.log(this.state.show)
-        }} role="button" to="/portfolio" Icon={<RiHome2Line />} Text="HOME" />
+        }} role="button" to="/" Icon={<RiHome2Line />} Text="HOME" />
 
           <Item onClick={e=>{
           this.setState({
             show:false
           })
-        }} role="button" to="/portfolio/showcase" Icon={<CgWorkAlt />} Text="WORK" />
+        }} role="button" to="/showcase" Icon={<CgWorkAlt />} Text="WORK" />
 
           <Item role="button" onClick={e=>{
           this.setState({
             show:false
           })
-        }} to="/portfolio/about" Icon={<IoPersonOutline />} Text="ABOUT" />
+        }} to="/about" Icon={<IoPersonOutline />} Text="ABOUT" />
           <Item onClick={e=>{
           this.setState({
             show:false
           })
-        }} to="/portfolio/skills" Icon={<BiBrain />} Text="SKILLS" />
+        }} to="/skills" Icon={<BiBrain />} Text="SKILLS" />
           <Item role="button" onClick={e=>{
           this.setState({
             show:false
           })
-        }} to="/portfolio/contact" Icon={<FiMail />} Text="CONTACT" />
+        }} to="/contact" Icon={<FiMail />} Text="CONTACT" />
 
         </Items>
 
