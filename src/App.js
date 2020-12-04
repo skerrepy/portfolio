@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import {BrowserRouter as Router,Route} from 'react-router-dom'
+import {HashRouter as Router,Route} from 'react-router-dom'
 import Loading from './Components/loading/Loading'
 
 const Layout = React.lazy(()=>import ('./Components/layout/Layout'));
@@ -13,7 +13,7 @@ const About = React.lazy(()=>import ('./Components/about/About'));
 function App() {
   return (
     <Suspense fallback={<Loading/>}>
-    <Router>
+    <Router basename="/">
       <Layout>
         <Navbar/>
         <Route path="/" exact component={Landing} />
