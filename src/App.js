@@ -16,11 +16,11 @@ function App() {
     <Router>
       <Layout>
         <Navbar/>
-        <Route path="/" exact component={Landing} />
-        <Route path="/showcase" exact component={Work} />
-        <Route path="/contact" exact component={Contact} />
-        <Route path="/skills" exact component={Skills} />
-        <Route path="/about" exact component={About} />
+        <Route path="/portfolio" exact component={Landing} />
+        <Route path="/portfolio/showcase" exact component={Work} />
+        <Route path="/portfolio/contact" exact component={Contact} />
+        <Route path="/portfolio/skills" exact component={Skills} />
+        <Route path="/portfolio/about" exact component={About} />
 
     <Route path="/test" exact component={Loading}/>
       </Layout>
